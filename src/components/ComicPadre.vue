@@ -2,11 +2,12 @@
     <div>
         <h1>Comic Padre</h1>
         <label>Titulo:</label>
-        <input type="text"/>
+        <input type="text"/><br/>
         <label>Imagen:</label>
-        <input type="text"/>
+        <input type="text"/><br/>
         <label>Descripción:</label>
-        <input type="text">
+        <input type="text"><br/>
+        <button>Nuevo Comic</button>
         <hr/>
         <div v-for="(com, index) in comics" :key="index">
             <ComicHijo :comic="com"/>
