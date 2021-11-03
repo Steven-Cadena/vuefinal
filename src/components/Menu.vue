@@ -6,6 +6,9 @@
                     <router-link to="/home" class="nav-link text-light">Home</router-link>
                 </li>
                 <li>
+                    <router-link to="/comic" class="nav-link text-light">Comic</router-link>
+                </li>
+                <li>
                     <router-link to="/multiplicar" class="nav-link text-light">Multiplicar</router-link>
                 </li>
                 <li>

@@ -5,6 +5,7 @@ import Home from './components/Home.vue'
 import Multiplicar from './components/Multiplicar.vue'
 import Deportes from './components/Deportes.vue';
 import NumerosPadre from './components/NumerosPadre.vue';
+import ComicPadre from './components/ComicPadre.vue';
 
 Vue.config.productionTip = false
 
@@ -15,6 +16,7 @@ const routes = [
   {path:"/multiplicar", component: Multiplicar},
   {path:"/deportes", component: Deportes},
   {path:"/numerospadre", component: NumerosPadre},
+  {path:"/comic", component: ComicPadre},
   {path:"/", component: Home}
 ];
 
