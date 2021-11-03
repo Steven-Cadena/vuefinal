@@ -1,15 +1,18 @@
 <template>
     <div>
         <nav>
-            <ul id="menu">
-                <li>
-                    <router-link to="/home">Home</router-link>
+            <ul id="menu" class="navbar navbar-dark bg-dark " >
+                <li class="nav-item active">
+                    <router-link to="/home" class="nav-link text-light">Home</router-link>
                 </li>
                 <li>
-                    <router-link to="/multiplicar">Multiplicar</router-link>
+                    <router-link to="/multiplicar" class="nav-link text-light">Multiplicar</router-link>
                 </li>
                 <li>
-                    <router-link to="/deportes">Deportes</router-link>
+                    <router-link to="/deportes" class="nav-link text-light">Deportes</router-link>
+                </li>
+                <li>
+                    <router-link to="/numerospadre" class="nav-link text-light">Números Padre</router-link>
                 </li>
             </ul>
         </nav>

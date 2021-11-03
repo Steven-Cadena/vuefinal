@@ -8,6 +8,7 @@
 
 <script>
 import Menu from './components/Menu.vue';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
   name: 'App',
