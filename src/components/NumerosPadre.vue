@@ -9,13 +9,13 @@
         <button @click="nuevoNumero()" class="btn btn-danger">
             Nuevo Número
         </button>
-        <div v-for="num in numeros" :key="num">
+        <div v-for="(num, index) in numeros" :key="index">
             <NumeroHijo :numero="num"
             v-on:sumarNumerosPadre="sumarNumerosPadre"/>
         </div>
     </div>
 </template>
-
+    
 <script>
 import NumeroHijo from './NumeroHijo.vue';
 
