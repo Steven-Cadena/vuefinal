@@ -8,6 +8,9 @@
                 <li>
                     <router-link to="/multiplicar">Multiplicar</router-link>
                 </li>
+                <li>
+                    <router-link to="/deportes">Deportes</router-link>
+                </li>
             </ul>
         </nav>
     </div>
