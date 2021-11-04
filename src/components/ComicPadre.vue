@@ -2,15 +2,27 @@
     <div>
         <h1>Comic Padre</h1>
         <label>Titulo:</label>
-        <input type="text"/><br/>
+        <input type="text" v-model="titulo" required/><br/>
         <label>Imagen:</label>
-        <input type="text"/><br/>
+        <input type="text" v-model="imagen" required/><br/>
         <label>Descripción:</label>
-        <input type="text"><br/>
-        <button>Nuevo Comic</button>
+        <input type="text" v-model="descripcion" required><br/><br/>
+        <button class="btn btn-warning" @click="insertarComic">
+            Nuevo Comic
+        </button>
+        <div v-if="favorito" style="backgroundColor:aqua">
+            <h1>{{favorito.titulo}}</h1>
+            <img :src="favorito.imagen" style="width:200px"/>
+            <h1>{{favorito.descripcion}}</h1>
+            
+        </div>
         <hr/>
         <div v-for="(com, index) in comics" :key="index">
-            <ComicHijo :comic="com"/>
+            <ComicHijo :comic="com"
+            :posicion="index"
+            v-on:modificarComicPadre="modificarComicPadre"
+            v-on:eliminarComicPadre="eliminarComicPadre"
+            v-on:seleccionarFavoritoPadre="seleccionarFavoritoPadre"/>
         </div>
     </div>
 </template>
@@ -22,6 +34,27 @@ export default {
     name:"ComicPadre",
     components: {
         ComicHijo
+    },
+    methods: {
+        insertarComic(){
+            var comicNuevo = {
+                titulo:this.titulo,
+                imagen:this.imagen,
+                descripcion:this.descripcion,
+            };
+            this.comics.push(comicNuevo);
+        },
+        seleccionarFavoritoPadre(comic){
+            this.favorito = comic;
+        },
+        modificarComicPadre(posicion){
+            this.comics[posicion].titulo = this.titulo;
+            this.comics[posicion].imagen = this.imagen;
+            this.comics[posicion].descripcion = this.descripcion
+        },
+        eliminarComicPadre(posicion){
+            this.comics.splice(posicion,1);
+        }
     },
     data(){
         return{
@@ -63,6 +96,10 @@ export default {
                 descripcion: "Murcielago"
                 }
             ],
+            titulo:"",
+            descripcion:"",
+            imagen:"",
+            favorito:null
         }
     }
 }
