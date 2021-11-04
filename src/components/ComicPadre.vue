@@ -113,6 +113,7 @@ export default {
             titulo:"",
             descripcion:"",
             imagen:"",
+            year:0,
             favorito:null,
             comicForm: {
                 titulo: "",

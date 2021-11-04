@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Menu/>
+    <NumerosAleatorios/>
     <hr/>
     <router-view></router-view>
   </div>
@@ -8,12 +9,14 @@
 
 <script>
 import Menu from './components/Menu.vue';
+import NumerosAleatorios from './components/NumerosAleatorios.vue';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
   name: 'App',
   components: {
     Menu,
+    NumerosAleatorios,
   }
 }
 </script>
