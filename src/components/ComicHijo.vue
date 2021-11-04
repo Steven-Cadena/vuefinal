@@ -1,6 +1,13 @@
 <template>
     <div>
         <h1 style="color:blue">{{comic.titulo}}</h1>
+        <!-- DIRECTIVA DE ESTILOS, RELACIONADO A CLASES CSS  -->
+        <h2 
+            :class="{
+                rojo: comic.year <=2000,
+                verde: comic.year > 2000
+            }"
+        >{{comic.year}}</h2>
         <button @click="seleccionarFavorito(comic)" class="btn btn-success">
             Seleccionar Favorito
         </button>
@@ -33,3 +40,7 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@import './../assets/css/estiloscomic.css';
+</style>
